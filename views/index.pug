@@ -9,7 +9,9 @@ block content
   .container
     .tex Find your next experience
     .text-center
-      input()
+      form.form-inline.search-input-group(action='/questions', method='GET')
+        i.fa.fa-search
+        input.form-control.mr-sm-2(type='text', name='term', placeholder='Search', aria-label='Search', value=term)
       
     .row
       .col-sm-4
