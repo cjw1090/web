@@ -5,20 +5,26 @@ block content
     h1.main-title= question.title
 
     .question.show
+      .Category= question.Category
+      .Type= question.type
       .content= question.content
+      .OrganizerName= question.OrganizerName
+      .Organizer= question.Organizer
       include _question
+      
 
       .buttons
         button.btn.btn-primary #[i.fa.fa-thumbs-up] 참여신청
-        if currentUser && question.author.id == currentUser.id
+        if currentUser && question.author.id == currentUser.id || currentUser.email == "admin@gmail.com"
           | 
           a.btn.btn-outline-secondary(href=`/questions/${question.id}/edit`) Edit
           | 
           a.btn.btn-outline-danger.need-confirm-btn(href=`/questions/${question.id}?_method=delete`) Delete
+  
       
     if question.numAnswers > 0
       hr
-      h3 #{question.numAnswers} Answer(s)
+      h3 #{question.numAnswers} question(s)
       .answers.show
         each answer in answers
           include _answer

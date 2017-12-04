@@ -10,18 +10,9 @@
           li.nav-item
             a.nav-link(href="/questions") Browse Events
           li.nav-item
-            a.nav-link(href="#") Help
-          if (!currentUser) 
-            li.nav-item
-              a.nav-link(href='/signin') Signin
-            li.nav-item
-              a.nav-link(href='/users/new') Signup
-          else
-            li.nav-item
-              a.nav-link(href=`/users/${currentUser._id}`) My Profile
-            li.nav-item
-              a.nav-link(href='/signout') Signout
-            li.nav-item
-              a.nav-link(href="/questions/new") Create Event
-     
+            a.nav-link(href=`/users/${currentUser._id}`) My Profile
+          li.nav-item
+            a.nav-link(href='/signout') Signout
+          li.nav-item
+            a.nav-link(href='/users/') Admin 
         

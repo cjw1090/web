@@ -1,6 +1,6 @@
 .form-group
   label(for="title") Title
-  input.form-control(type="text", name="title", placeholder="What's your question?", value=question.title)
+  input.form-control(type="text", name="title", placeholder="TITLE", value=question.title)
 
 .form-group
   label Category
@@ -30,15 +30,23 @@
     option(value="Performance") Performance
     option(value="Screening") Screening
     option(value="Gala") Gala
+    
+.form-group 
+label Ticket Prices
+  input(type="radio", name="ticket", value="free", checked="")
+  |	free&nbsp;
+  input(type="radio", name="ticket", value="paid")
+  |	paid
+  input.form-control(type="text", placeholder="price", id="ticketPrice", name="ticketPrice")
 .form-group
   label(for="location") location
   input.form-control(type="text", name="location", value=question.location)
 .form-group
   label(for="startT") Start Time
-  input.form-control(type="date", name="startT", value=question.startT)
+  input.form-control(type="datetime-local", name="startT", value=question.startT)
 .from-group
   label(for="finishT") Finish Time
-  input.form-control(type="date", name="finishT", value=question.finishT)
+  input.form-control(type="datetime-local", name="finishT", value=question.finishT)
 .form-group
   label(for="event") Description
   textarea.form-control(name="content", placeholder="event description", rows="5")= question.content

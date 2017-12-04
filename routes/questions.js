@@ -63,6 +63,15 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   }
   question.title = req.body.title;
   question.content = req.body.content;
+  question.ticket = req.body.ticket;
+  question.ticketPrice = req.body.ticketPrice;
+  question.location = req.body.location;
+  question.startT = req.body.startT;
+  question.Category = req.body.Category;
+  question.Type = req.body.type;
+  question.finishT = req.body.finishT;
+  question.OrganizerName = req.body.OrganizerName;
+  question.Organizer = req.body.Organizer;
   question.tags = req.body.tags.split(" ").map(e => e.trim());
 
   await question.save();
@@ -83,6 +92,8 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     author: user._id,
     Category: req.body.Category,
     Type: req.body.type,
+    ticket: req.body.ticket,
+    ticketPrice: req.body.ticketPrice,
     location: req.body.location,
     startT: req.body.startT,
     finishT: req.body.finishT,

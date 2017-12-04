@@ -1,4 +1,8 @@
-.content= question.content
+.ticket= question.ticket
+.ticketPrice= question.ticketPrice
+.location= question.location
+.startT=  question.startT
+.finishT= question.finishT
 .tags.badges
   each tag in question.tags
     span.badge.badge-phill.badge-secondary= tag
@@ -7,7 +11,7 @@
   .col-sm
     .numbers.
       #[span.number.num-votes= question.numLikes] joins,
-      #[span.number.num-answers= question.numAnswers] answers,
+      #[span.number.num-answers= question.numAnswers] questions,
       #[span.number.num-views= question.numReads] reads
   .col-sm
     .author

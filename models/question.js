@@ -13,6 +13,8 @@ var schema = new Schema({
   content: {type:String, required:true},
   OrganizerName: {type:String, required:true},
   Organizer: {type:String, required:true},
+  ticket: {type:String, required: true},
+  ticketPrice: {type: Number, default:0},
   tags: [String],
   numLikes: {type: Number, default: 0},
   numAnswers: {type: Number, default: 0},
