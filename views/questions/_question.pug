@@ -1,6 +1,11 @@
-.ticket= question.ticket
-.ticketPrice= question.ticketPrice
 .location= question.location
+if question.ticket != "free"
+  |
+  .ticketPrice= question.ticketPrice
+if question.ticket == "free"
+  |
+  string 무료
+  br
 .startT=  question.startT
 .finishT= question.finishT
 .tags.badges
