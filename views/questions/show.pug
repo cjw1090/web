@@ -34,7 +34,7 @@ block content
       .row
         .col-sm
           .numbers.
-            #[span.number.num-votes= question.numLikes] joins,
+            #[span.number.num-likes= question.numLikes] joins,
             #[span.number.num-answers= question.numAnswers] questions,
             #[span.number.num-views= question.numReads] reads
 
@@ -64,6 +64,8 @@ block content
 
     form(action=`/questions/${question.id}/answers`, method='POST')
       .form-group
-        label(for='answer') Question
+        label(for='answer') Review
         textarea.form-control(name="content", rows="5")
-      button.btn.btn-primary(type="submit") POST YOUR QUESTION
+      button.btn.btn-primary(type="submit") POST
+      
+    script(src='/javascripts/event_client.js')
